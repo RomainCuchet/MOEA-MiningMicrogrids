@@ -95,7 +95,21 @@ py Main_Run_All_Algs_HPC.py --alg_flag=1 --seed_no=0 --n_pop=100 --n_eval=10000 
 
 ## Results
 
-The results can be found on Figshare with the identifier 10.25909/27347496 .
+The results can be found on [Figshare](https://figshare.com/articles/dataset/Results/27347496) with the identifier 10.25909/27347496 .
+
+- Gen: generation index
+- PWT (MW): Wind Turbine Installed Power Capacity (in megawatts)
+- PV (MW): Photovoltaic Installed Power Capacity (in megawatts)
+- PBAT (MW): Battery Power Capacity (in megawatts)
+- EBAT (MWh): Battery Energy Capacity (in megawatt-hours)
+- PDG (MW): Diesel Generator Installed Power Capacity (in megawatts)
+- NPC ($/kWh): Net Present Cost per Delivered Energy Unit
+- GHE (kg CO2/kWh): Greenhouse Gas Emissions per kWh Delivered
+- ERC (GWh/yr): Energy Renewable Curtailment per Year (in gigawatt-hours per year).
+Amount of potential renewable energy (PV + wind) that could not be used or stored and was therefore wasted.
+- ENS (%):Energy-Not-Served Ratio (percentage). Reliability indicator: percentage of load demand that is not met during the year.
+    - ENS = 0 % → perfect reliability
+    - ENS > 0 % → there are shortages or blackouts
 
 
 ## License
