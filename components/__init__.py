@@ -1,1 +1,1 @@
-from components.power_production import SolarPanel, PowerProductionManager
+from components.power_production import SolarPanel, WindTurbine, PowerProductionManager

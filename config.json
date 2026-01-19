@@ -1,18 +1,29 @@
 {
-    "site":
-    {
+    "site": {
         "latitude": 45.6300,
         "longitude": -0.9700
     },
-    
-    "solar_panel":
-    {
+    "solar_panel": {
         "p_stc": 300,
         "gamma": -0.43,
-        "noct" : 45,
+        "noct": 45,
         "beta": 15,
         "l_syst": 0,
         "historical_data_path": "static/pv_historical_data-2022_2025.csv"
+    },
+    "wind_turbine": {
+        "p_nominal": 10000,
+        "p_max": 12000,
+        "rotor_diameter": 5.5,
+        "hub_height": 6.0,
+        "v_cut_in": 2.5,
+        "v_rated": 11.0,
+        "v_cut_out": 25.0,
+        "generator_efficiency": 0.96,
+        "cp": 0.40,
+        "air_density": 1.225,
+        "system_losses": 0.0,
+        "power_curve_path": "static/wind_turbine_power_curve.csv",
+        "historical_data_path": "static/wind_historical_data-2022_2025.csv"
     }
-    
 }
