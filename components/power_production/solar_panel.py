@@ -20,7 +20,7 @@ class SolarPanel:
         self.albedo = albedo
         self.surface_azimuth = np.radians(surface_azimuth)
 
-    def _compute_power_output(
+    def compute_power_output(
         self,
         ghi: float,
         dhi: float,
@@ -56,6 +56,5 @@ class SolarPanel:
             * (1 + self.gamma * (t_cell - 25))
             * (1 - self.l_syst)
         )
-        if power_output < 0:
-            print("Negative power output:", power_output)
+
         return np.maximum(power_output, 0)

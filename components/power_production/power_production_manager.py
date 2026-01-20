@@ -16,11 +16,6 @@ class PowerProductionManager:
             albedo=0.2,
         )
 
-    def compute_solar_panel_power(self, ghi, dhi, bhi, t_amb, sza, azimuth):
-        return self.solar_panel._compute_power_output(
-            ghi, dhi, bhi, t_amb, sza, azimuth
-        )
-
     def simmulate_historical_power_production(
         self, start_time: pd.Timestamp, end_time: pd.Timestamp
     ):
@@ -32,9 +27,8 @@ class PowerProductionManager:
         solar_azimuth, sza = compute_solar_azimuth_zenith(
             self.config.SITE_LATITUDE, self.config.SITE_LONGITUDE, df.index
         )
-        sza_tab = df["sza"]
 
-        df["sp_power"] = self.compute_solar_panel_power(
+        df["sp_power"] = self.solar_panel.compute_power_output(
             df["GHI"],
             df["DHI"],
             df["BHI"],
