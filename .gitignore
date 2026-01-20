@@ -1,6 +1,6 @@
 __pycache__
 code/Results_BAT/*.csv
 code/Results/*.csv
-test[1-9]*.py
 static/*.csv
 static/*.txt
+test[1-9]*.py
