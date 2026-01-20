@@ -18,9 +18,18 @@ class PowerProductionManager:
             albedo=0.2,
         )
 
-        # TODO: Fix instentiation issue
         self.wind_turbine = WindTurbine(
-            power_curve_path=self.config.WT_POWER_CURVE_PATH
+            p_nominal=self.config.WT_P_NOMINAL,
+            p_max=self.config.WT_P_MAX,
+            rotor_diameter=self.config.WT_ROTOR_DIAMETER,
+            hub_height=self.config.WT_HUB_HEIGHT,
+            v_cut_in=self.config.WT_V_CUT_IN,
+            v_rated=self.config.WT_V_RATED,
+            v_cut_out=self.config.WT_V_CUT_OUT,
+            generator_efficiency=self.config.WT_GENERATOR_EFFICIENCY,
+            air_density=self.config.WT_AIR_DENSITY,
+            cp=self.config.WT_CP,
+            system_losses=self.config.WT_SYSTEM_LOSSES,
         )
 
     def simulate_historical_power_production(
