@@ -17,6 +17,9 @@ class PowerProductionManager:
             l_syst=self.config.SP_L_SYST,
             albedo=0.2,
         )
+        self.wind_turbine = WindTurbine(
+            power_curve_path=self.config.WT_POWER_CURVE_PATH
+        )
 
         self.wind_turbine = WindTurbine(
             p_nominal=self.config.WT_P_NOMINAL,
@@ -32,7 +35,10 @@ class PowerProductionManager:
             system_losses=self.config.WT_SYSTEM_LOSSES,
         )
 
-    def simulate_historical_power_production(
+    def compute_wind_turbine_power(self, wind_speed):
+        return self.wind_turbine._compute_power_output(wind_speed)
+
+    def simmulate_historical_power_production(
         self, start_time: pd.Timestamp, end_time: pd.Timestamp
     ):
         df = pd.read_csv(self.config.SP_historical_data_path)
@@ -64,6 +70,6 @@ class PowerProductionManager:
         df = df.set_index("time")
         df = df[(df.index >= start_time) & (df.index <= end_time)]
 
-        df["wt_power"] = df["wind_speed"].apply(self.wind_turbine.compute_power_output)
+        df["wt_power"] = df["wind_speed"].apply(self.compute_wind_turbine_power)
 
         return df

@@ -3,12 +3,10 @@
         "latitude": 45.6300,
         "longitude": -0.9700
     },
-
-    "solar_panel":
-    {
+    "solar_panel": {
         "p_stc": 300,
-        "gamma": -0.0043,
-        "noct" : 45,
+        "gamma": -0.43,
+        "noct": 45,
         "beta": 15,
         "l_syst": 0.094,
         "historical_data_path": "static/pv_historical_data-2022_2025.csv"

@@ -34,7 +34,7 @@ class WindTurbine:
 
         self.rotor_area = np.pi * (self.rotor_diameter / 2) ** 2
 
-    def compute_power_output(self, wind_speed: float) -> float:
+    def _compute_power_output(self, wind_speed: float) -> float:
         # Compute electrical power output [W] from wind speed at hub height [m/s]
 
         # Cut-in / cut-out
