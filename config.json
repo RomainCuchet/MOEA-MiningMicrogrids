@@ -1,11 +1,14 @@
 {
     "site": {
+    "site": {
         "latitude": 45.6300,
         "longitude": -0.9700
     },
     "solar_panel": {
+    "solar_panel": {
         "p_stc": 300,
         "gamma": -0.43,
+        "noct": 45,
         "noct": 45,
         "beta": 15,
         "l_syst": 0.094,
@@ -25,5 +28,20 @@
         "system_losses": 0.0,
         "power_curve_path": "static/wind_turbine_power_curve.csv",
         "historical_data_path": "static/wind_historical_data-2022_2025.csv"
+    }
+    },
+    "battery": {
+        "capacity_kwh": 14.3,
+        "soc_init": 0.5,
+        "soc_min": 0.15,
+        "soc_max": 0.95,
+        "p_charge_nominal_kw": 7.2,
+        "p_discharge_nominal_kw": 7.2,
+        "p_charge_max_kw": 10.2,
+        "p_discharge_max_kw": 10.2,
+        "eta_charge": 0.97,
+        "eta_discharge": 0.97,
+        "voltage_nominal_v": 51.2,
+        "technology": "LiFePO4"
     }
 }
